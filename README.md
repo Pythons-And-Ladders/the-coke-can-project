@@ -18,9 +18,9 @@ Node Health Monitoring: Continuously track internal metrics like free memory, ba
 Environmental Monitoring: Use a variety of onboard sensors (e.g., BME280) to collect environmental data.
 QoS Classification Engine: Automatically prioritize and route data to the appropriate communication channel.
 
-# Getting Started
-## Prerequisites
-### 1. Hardware:
+## Getting Started
+### Prerequisites
+**1. Hardware:**
 
 | General Hardware                    | Specific Model Used                                      |
 |-------------------------------------|----------------------------------------------------------|
@@ -30,7 +30,7 @@ QoS Classification Engine: Automatically prioritize and route data to the approp
 | Flat Top 18650 Rechargable Battery  | [Aukido 3.7V 3500mAh NiMH Battery](https://www.amazon.co.uk/Rechargeable-Capacity-Batteries-Headlamp-Flashlight/dp/B0CD2QDDX8) |
 | Development Platform (i.e., Laptop) | [HP ProBook 450 G7](https://business.currys.co.uk/catalogue/computing/laptops/windows-laptop/hp-probook-450-g7-15-6-intel-core-i5-10210u-8-gb-ram-256-gb-ssd-uk/P266975P) |
 
-### 2. Software:
+**2. Software:**
 
 | General Software                   | Specific Model Used                                                     |
 |------------------------------------|-------------------------------------------------------------------------|
@@ -38,7 +38,7 @@ QoS Classification Engine: Automatically prioritize and route data to the approp
 
 ## Installation and Setup
 
-### Clone the repository:
+### 1. Clone the repository:
 
 ```bash
 
@@ -47,43 +47,43 @@ cd the-coke-can-project
 
 ```
 
-### Prepare your Meshtastic device:
+### 2. Prepare your Meshtastic device:
 
 These steps will guide you through setting up the TTGO T-Beam Supreme by flashing it with MicroPython. This will replace the Meshtastic firmware, enabling full control over the device for custom configurations.
 
-**1. Entering Bootloader Mode:**
+**2.1. Entering Bootloader Mode:**
 - Place the device in bootloader mode by following the [flashing instructions](https://meshtastic.org/docs/hardware/devices/lilygo/tbeam/?t-beam=supreme#flashing) set out by Meshtastic.
 
-**2. Connecting the Device**
+**2.2. Connecting the Device**
 - Once in bootloader mode, connect the TTGO T-Beam Supreme to your development platform via USB to USB-C data cable.
 - Ensure the development platform recognises a device by checking the COM ports: Device Manager > Ports (COM & LPT).
 
-**3. Setting Up Thonny IDE**
+**2.3. Setting Up Thonny IDE**
 - Download Thonny IDE and open once download is complete.
 - Once opened, click on the bottom right corner of the IDE where it says "Local Python 3 ⋅ Thonny's Python".
 - Then from the drop-down menu, click on "Configure Interpreter". This should now have opened the Thonny options window.
 - Select the drop-down menu directly under "Which kind of interpreter should Thonny use for running your code?" and select the "MicroPython (ESP32)" option.
 - Now within the "Details" box, there should be the hyperlinked text at the bottom right "Install or update MicroPython (esptool) (UF2)". Click this to open the "Install MicroPython (esptool)" window.
 
-**4. Flashing MicroPython to the TTGO T-Beam Supreme**
+**2.4. Flashing MicroPython to the TTGO T-Beam Supreme**
 - If not automatically selected when the window opens, click on the "Target port" drop down menu and select the port that corresponds to that of which the TTGO T-BEAM SUPREME is connected to.
 - Ensure that the tick box for "Erase all flash before installing (not just the write areas)" is selected before proceeding.
 - Now to select the appropriate version of MicroPython for the TTGO T-Beam Supreme, the "ESP32-S3" option should be selected within the "MicroPython family" drop-down menu, and the "Espressif ⋅ ESP32-S3" option within the variant menu.
 - From these options, Thonny will automatically assign the most recent version of this MicroPython variant to your device. For reference, the version currently used within this project is 1.23.0.
 - Ensure the device is in bootloader mode and press the install button which will erase the meshtastic firmware and flash the native Espressif ESP32-S3 firmware.
 
-**Final Steps**
+**2.5. Final Steps**
 Now the TTGO T-Beam Supreme should be ready to run on the microcontroller's native firmware. You can now proceed with configuring it for custom applications, such as turning it into a fully configurable WSN node (of which instructions will follow).
 
-### Install Necessary Files
+### 3. Install Necessary Files
 
-**Main WSN Logic Files**
+**3.1. Main WSN Logic Files**
 These files are the configurable files that make up the logic behind the wireless sensor network nodes:
 
 - main.py: Main application logic that reads from sensors and node status.
 - decision_engine.py: The decision engine responsible for packetising, classifying and selecting the appropriate communication method for the retreived data.
 
-**Required Drivers**
+**3.2. Required Drivers**
 To interface with the onboard modules of the TTGO T-Beam Supreme, you need to install the necessary drivers. These drivers were pre-configured within the Meshtastic firmware, but since we are now using the ESP32-S3 firmware, you will need to manually reinstall them to ensure proper communication between the board's modules and your development environment. Here is the list of drivers:
 
 - `AXP2101.py`: Driver for the AXP2101 Power Management Unit (PMU).
@@ -95,7 +95,7 @@ To interface with the onboard modules of the TTGO T-Beam Supreme, you need to in
 > [!NOTE]
 > Drivers that can be installed via Thonny by navigating to Tools > Manage packages... and searching for micropython-lib and PyPI are marked with a [T]. Installing these files through Thonny is recommended, as it ensures that you are using the most up-to-date versions that are compatible with your MicroPython installation.
 
-**Required Libraries**
+**3.3. Required Libraries**
 MicroPython comes with several libraries pre-installed, including machine, which provides access to hardware components, and time, which offers a range of functions for handling time-related operations, such as delays and retrieving the current system time. The following libraries are used to help support additional functionalities such as managing I2C communications, handling GPS data, and more:
 
 - `aioble` [T]: A library that enables Bluetooth Low Energy (BLE) operations, facilitating communication with BLE devices.
@@ -109,7 +109,7 @@ MicroPython comes with several libraries pre-installed, including machine, which
 > [!NOTE]
 > Libraries that can be installed via Thonny by navigating to Tools > Manage packages... and searching for micropython-lib and PyPI are marked with a [T]. Installing these files through Thonny is recommended, as it ensures that you are using the most up-to-date versions that are compatible with your MicroPython installation.
 
-### Upload Necessary Files to Device
+### 4. Upload Necessary Files to Device
 After downloading all the necessary files to your development platform's local directory, launch Thonny and navigate to the files tab on the left side of the window. Here, you should see all the downloaded files listed. Select all the files, right-click to open the actions menu, and choose "Upload to /". While the files upload to your device, feel free to grab a coffee or a cup of tea (it may take a few minutes). Once the upload is complete, you will find the files in the "MicroPython device" tab below the files section on the left side of the window, accompanied by the "boot.py" file.
 
 ## Basic Usage
