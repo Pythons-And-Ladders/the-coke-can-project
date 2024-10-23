@@ -1,13 +1,14 @@
-# A Multi-Protocol Wireless Mesh Sensor Network Project - Node Development with Meshtastic Devices
+# The Coke Can Project
 
 Welcome to The Coke Can Project! This repository provides the tools, code, and guidance to convert the TTGO T-Beam Supreme devices into fully configurable, multi-protocol wireless sensor nodes. The system allows efficient data classification and transmission over LoRa, WiFi, or BLE based on Quality of Service (QoS) requirements and sensor data urgency.
 
 ## Project Overview
 This project turns Meshtastic devices into customizable wireless sensor nodes capable of environmental monitoring and data classification for transmission using different communication protocols. The system includes:
 
-Intrinsic node data (e.g., battery status, memory usage, processor load)
-Extrinsic sensor data (e.g., temperature, humidity, pressure using a BME280 sensor)
-Network parameters (e.g., transmission method: LoRa, WiFi, BLE)
+- Intrinsic node data (e.g., battery status, memory usage, processor load)
+- Extrinsic sensor data (e.g., temperature, humidity, pressure using a BME280 sensor)
+- Network parameters (e.g., transmission method: LoRa, WiFi, BLE)
+
 By allowing you to preemptively classify sensor data based on urgency and importance, this system ensures energy-efficient communication and flexible network configurations.
 
 ### Features
