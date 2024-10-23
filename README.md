@@ -2,6 +2,14 @@
 
 Welcome to The Coke Can Project! This repository provides the tools, code, and guidance to convert the TTGO T-Beam Supreme devices into fully configurable, multi-protocol wireless sensor nodes. The system allows efficient data classification and transmission over LoRa, WiFi, or BLE based on Quality of Service (QoS) requirements and sensor data urgency.
 
+**Why "The Coke Can Project"?**
+
+The name "Coke Can Project" came from the way the wireless sensor network (WSN) was first conceptualised. In early discussions, we used different soft drink brands to represent the various roles and sensors that each node in the network could have. For example, a Coke node could be equipped with environmental sensors, a Pepsi node might serve as a router, and a Fanta node could act as a gateway or dead letterbox for message storage.
+
+This analogy helped us to easily visualise and distinguish the different functionalities across the network, making it simpler to plan the system’s structure. Additionally, the concept of a "Coke Can" provided a useful reference for the size and weight of the nodes, emphasising their portability and versatility. Each node, roughly the size of a can, is compact enough to be deployed in a variety of environments while maintaining flexibility in its role and onboard sensors.
+
+This creative approach simplified the early design process and now reflects the project's adaptability and efficiency in real-world applications.
+
 ## Project Overview
 
 The purpose of this project is to design and develop an intelligent data routing system for a Wireless Sensor Network (WSN). The primary goal is to enhance energy efficiency, while ensuring reliability and flexibility in data management across the network. This project not only delivers a theoretical solution but also implements and evaluates a physical WSN.
