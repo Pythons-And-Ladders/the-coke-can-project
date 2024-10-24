@@ -51,8 +51,8 @@ The project focuses on the development of an intelligent data routing system for
 - **Environmental Monitoring**: Use a variety of onboard sensors (e.g., BME280) to collect environmental data.
 - **Decision Engine**: Automatically prioritise and route data to the appropriate communication channel.
 
-## Getting Started
-### Prerequisites
+# Getting Started
+## Prerequisites
 **1. Hardware:**
 
 | General Hardware                    | Specific Model Used                                      |
