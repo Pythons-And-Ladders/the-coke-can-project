@@ -1,26 +1,28 @@
-from machine import SPI, Pin
-import machine
-import sh1106
+from machine import Pin
 import time
 from sx1262 import SX1262
 
-# Pin assignments
-cs_pin = Pin(10, Pin.OUT)  # Chip Select
-rst_pin = Pin(5, Pin.OUT)  # Reset
-gpio_pin = Pin(4, Pin.IN)  # DIO1
-irq_pin = Pin(1, Pin.IN)   # IRQ pin
+# Pin assignments for SX1262
+SPI_BUS = 2                # SPI bus
+CLK_PIN = Pin(12)          # SCLK pin
+MOSI_PIN = Pin(11)         # MOSI pin
+MISO_PIN = Pin(13)         # MISO pin
+CS_PIN = Pin(10, Pin.OUT)  # Chip Select
+RST_PIN = Pin(5, Pin.OUT)  # Reset
+GPIO_PIN = Pin(4, Pin.IN)  # DIO1
+IRQ_PIN = Pin(1, Pin.IN)   # IRQ pin
 
-# Create SX1262 object
-sx = SX1262(spi_bus=2, clk=12, mosi=11, miso=13, cs=cs_pin, irq=irq_pin, rst=rst_pin, gpio=gpio_pin)
+# Create SX1262 LoRa transceiver object
+LORA = SX1262(spi_bus=SPI_BUS, clk=CLK_PIN, mosi=MOSI_PIN, miso=MISO_PIN, cs=CS_PIN, irq=IRQ_PIN, rst=RST_PIN, gpio=GPIO_PIN)
 
 # Reset the module
-rst_pin.value(0)  # Set RST low
-time.sleep(0.1)  # Wait for 100 ms
-rst_pin.value(1)  # Set RST high
-time.sleep(0.5)  # Wait for 500 ms
+RST_PIN.value(0)  # Set RST low
+time.sleep(0.1)   # Wait for 100 ms
+RST_PIN.value(1)  # Set RST high
+time.sleep(0.5)   # Wait for 500 ms
 
 # Begin communication with SX1262
-sx.begin(freq=868, bw=500.0, sf=12, cr=8, syncWord=0x12,
+LORA.begin(freq=868, bw=500.0, sf=12, cr=8, syncWord=0x12,
          power=-5, currentLimit=60.0, preambleLength=8,
          implicit=False, implicitLen=0xFF,
          crcOn=True, txIq=False, rxIq=False,
@@ -28,19 +30,33 @@ sx.begin(freq=868, bw=500.0, sf=12, cr=8, syncWord=0x12,
 
 print("Receiver initialized successfully.")
 
+# Define the unique addresses for the target and source node(s)
+TARGET_ADDR = b'\x01'
+SOURCE_ADDR = b'\x02'  
+
 # Function to handle received messages
-def cb(events):
-    if events & SX1262.RX_DONE:
-        msg, err = sx.recv()
-        error = SX1262.STATUS[err]
-        print('Received message:', msg, 'with status:', error)
-        oled.fill(0)
-        oled.text("Message received:", 0, 0)
-        oled.text(f"{msg}", 0, 20)
-        oled.show()  # Ensure the display is updated
+def cb(EVENTS):
+    if EVENTS & SX1262.RX_DONE:
+        MESSAGE, ERR = LORA.recv()
+        ERROR = SX1262.STATUS[ERR]
+        if ERROR == 'ERR_NONE':
+            # Extract the destination and source addresses
+            TARGET = MESSAGE[0:1]  # First byte is the destination address
+            SOURCE = MESSAGE[1:2]  # Second byte is the source address
+            PAYLOAD = MESSAGE[2:]  # The rest of the message is the actual payload
+
+            # Check if the message is for this node and from the expected source
+            if TARGET == TARGET_ADDR and SOURCE == SOURCE_ADDR:
+                print('Received message from source', SOURCE, ':', PAYLOAD)
+            else:
+                print('Message not for this node or from unexpected source. Ignored.')
+
+        else:
+            print('Received message with error:', ERROR)
+        print('Received message:', MESSAGE, 'with status:', ERROR)
 
 # Set callback for receiving messages
-sx.setBlockingCallback(False, cb)  # Use non-blocking callback
+LORA.setBlockingCallback(False, cb)  # Use non-blocking callback
 
 while True:
     time.sleep(1)  # Keep the loop running
