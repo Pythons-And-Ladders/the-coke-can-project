@@ -126,7 +126,7 @@ To interface with the onboard modules of the TTGO T-Beam Supreme, you need to in
 - `qmi8658c.py`: Driver for the QMI8658 Inertial Measurement Unit (IMU).
 
 > [!NOTE]
-> Drivers that can be installed via Thonny by navigating to Tools > Manage packages... and searching for micropython-lib and PyPI are marked with a [T]. Installing these files through Thonny is recommended, as it ensures that you are using the most up-to-date versions that are compatible with your MicroPython installation.
+> Drivers that can be installed via Thonny (by navigating to Tools > Manage packages... and searching within the micropython-lib and PyPI collections) are marked with a [T]. Installing these files through Thonny is recommended, as it ensures that you are using the most up-to-date versions that are compatible with your MicroPython installation.
 
 **3.3. Required Libraries**
 MicroPython comes with several libraries pre-installed, including machine, which provides access to hardware components, and time, which offers a range of functions for handling time-related operations, such as delays and retrieving the current system time. The following libraries are used to help support additional functionalities such as managing I2C communications, handling GPS data, and more:
@@ -140,7 +140,7 @@ MicroPython comes with several libraries pre-installed, including machine, which
 - `micropyGPS`: A library for parsing GPS NMEA sentences, making it easy to extract location information from GPS modules.
 
 > [!NOTE]
-> Libraries that can be installed via Thonny by navigating to Tools > Manage packages... and searching for micropython-lib and PyPI are marked with a [T]. Installing these files through Thonny is recommended, as it ensures that you are using the most up-to-date versions that are compatible with your MicroPython installation.
+> Drivers that can be installed via Thonny (by navigating to Tools > Manage packages... and searching within the micropython-lib and PyPI collections) are marked with a [T]. Installing these files through Thonny is recommended, as it ensures that you are using the most up-to-date versions that are compatible with your MicroPython installation.
 
 ### 4. Upload Necessary Files to Device
 After downloading all the necessary files to your development platform's local directory, launch Thonny and navigate to the files tab on the left side of the window. Here, you should see all the downloaded files listed. Select all the files, right-click to open the actions menu, and choose "Upload to /". While the files upload to your device, feel free to grab a coffee or a cup of tea (it may take a few minutes). Once the upload is complete, you will find the files in the "MicroPython device" tab below the files section on the left side of the window, accompanied by the "boot.py" file.
