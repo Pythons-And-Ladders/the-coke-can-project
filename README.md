@@ -1,42 +1,42 @@
 # The Coke Can Project
 
-Welcome to The Coke Can Project! This repository provides the tools, code, and guidance to convert the TTGO T-Beam Supreme devices into fully configurable, multi-protocol wireless sensor nodes. The system allows efficient data classification and transmission over LoRa, WiFi, or BLE based on Quality of Service (QoS) requirements and sensor data urgency.
+Welcome to The **Coke Can Project**! This repository provides the tools, code, and guidance to convert the TTGO T-Beam Supreme into a highly configurable, multi-protocol wireless sensor node. The system intelligently classifies and transmits data over **LoRa**, **WiFi**, or **BLE**, depending on Quality of Service (QoS) requirements, urgency, and data importance.
 
-**Why "The Coke Can Project"?**
+## Why "The Coke Can Project"?
 
-The name "Coke Can Project" came from the way the wireless sensor network (WSN) was first conceptualised. In early discussions, we used different soft drink brands to represent the various roles and sensors that each node in the network could have. For example, a Coke node could be equipped with environmental sensors, a Pepsi node might serve as a router, and a Fanta node could act as a gateway or dead letterbox for message storage.
+The name "**Coke Can Project**" came from the way the wireless sensor network (WSN) was first conceptualised. In early discussions, we used different soft drink brands to represent the various roles and sensors that each node in the network could have. For example, a **Coke** node could be equipped with environmental sensors, a **Pepsi** node might serve as a router, and a **Fanta** node could act as a gateway or dead letterbox for message storage.
 
-This analogy helped us to easily visualise and distinguish the different functionalities across the network, making it simpler to plan the system’s structure. Additionally, the concept of a "Coke Can" provided a useful reference for the size and weight of the nodes, emphasising their portability and versatility. Each node, roughly the size of a can, is compact enough to be deployed in a variety of environments while maintaining flexibility in its role and onboard sensors.
+This analogy helped us to easily visualise and distinguish the different functionalities across the network, making it simpler to plan the system’s structure. Additionally, the concept of a "Coke Can" provided a useful reference for the **size and weight** of the nodes, emphasising their portability and versatility. Each node, roughly the size of a standard 330ml can, is compact enough to be deployed in a variety of environments while maintaining flexibility in its role and onboard sensors.
 
 This creative approach simplified the early design process and now reflects the project's adaptability and efficiency in real-world applications.
 
 ## Project Overview
 
-The purpose of this project is to design and develop an intelligent data routing system for a Wireless Sensor Network (WSN). The primary goal is to enhance energy efficiency, while ensuring reliability and flexibility in data management across the network. This project not only delivers a theoretical solution but also implements and evaluates a physical WSN.
+The purpose of this project is to design and develop an intelligent data routing system for a WSN. The primary goal is to enhance **energy efficiency**, while ensuring **reliability**, **extensibility** and **flexibility** in data management. This includes both a theoretical design and the physical implementation of a working WSN.
 
 **Key Features**
-- Metadata Management: Efficient assignment and management of data metadata.
-- Priority Assignment: Classifies data by urgency to ensure high-priority information is handled first.
-- Traffic Pre-emption: Optimizes network traffic flow by prioritizing critical data.
-- Protocol Selection: Automatically selects the best communication protocol (LoRa, Wi-Fi, or BLE) based on data requirements.
-- Data Transmission: Secure and reliable data transmission across the WSN.
+- **Metadata Management**: Efficient assignment and management of data metadata.
+- **Priority Assignment**: Classifies data by urgency and importance to ensure high-priority information is handled first.
+- **Traffic Pre-emption**: Optimises network traffic flow by prioritising critical data.
+- **Protocol Selection**: Automatically selects the best communication protocol (LoRa, Wi-Fi, or BLE) based on data requirements.
+- **Data Transmission**: Secure and reliable data transmission across the WSN.
 
-**System Capabilities**
-This project turns Meshtastic devices into customisable wireless sensor nodes capable of environmental monitoring and data classification for transmission using different communication protocols. The system includes the processing of:
+### System Capabilities
+This project turns TTGO T-Beam Supreme Meshtastic devices into customisable wireless sensor nodes capable of environmental monitoring and data classification for transmission using different communication protocols. The system includes the processing of:
 
-- Intrinsic node data (e.g., battery percentage and system voltage)
-- Extrinsic sensor data (e.g., temperature, humidity and pressure)
-- Network parameters (e.g., RSSI and transmission error rate)
+- **Intrinsic node data**: e.g., battery percentage and system voltage
+- **Extrinsic sensor data**: e.g., temperature, humidity and pressure
+- **Network parameters**: e.g., RSSI and transmission error rate
 
 By allowing you to preemptively classify sensor data based on urgency and importance, this system ensures energy-efficient communication and flexible network configurations.
 
 ## Product Scope
-The project focuses on the development of an intelligent data routing system for various applications, such as disaster management, environmental monitoring, and industrial automation. It provides a flexible, dual-protocol communication system (LoRa, Wi-Fi, BLE) for efficient data collection, prioritisation, and transmission.
+The project focuses on the development of an intelligent data routing system for various applications, such as disaster management, environmental monitoring, and industrial automation. It provides a flexible, multi-protocol communication system (LoRa, Wi-Fi and BLE) for energy efficient transmission of data.
 
 **In-Scope Tasks:**
 - Data collection and labelling
 - Priority assignment and pre-emption
-- Dual-protocol communication
+- Multi-protocol communication
 - System integration and testing
 
 **Out-of-Scope Tasks:**
@@ -45,11 +45,11 @@ The project focuses on the development of an intelligent data routing system for
 - Post-deployment maintenance
 
 ### Features
-Multi-Protocol Communication: Supports LoRa, WiFi, and BLE.
-Extensible Framework: Add your own sensors and modify classification logic.
-Node Health Monitoring: Continuously track internal metrics like free memory, battery voltage, and processor load.
-Environmental Monitoring: Use a variety of onboard sensors (e.g., BME280) to collect environmental data.
-QoS Classification Engine: Automatically prioritize and route data to the appropriate communication channel.
+- **Multi-Protocol Communication**: Supports LoRa, WiFi, and BLE.
+- **Extensible Framework**: Ability to add your own sensors and modify classification logic.
+- **Node Health Monitoring**: Continuously track internal metrics like free memory, battery voltage, and processor load.
+- **Environmental Monitoring**: Use a variety of onboard sensors (e.g., BME280) to collect environmental data.
+- **Decision Engine**: Automatically prioritise and route data to the appropriate communication channel.
 
 ## Getting Started
 ### Prerequisites
