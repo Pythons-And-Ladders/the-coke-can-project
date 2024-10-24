@@ -41,7 +41,7 @@ while True:
 
     # Send the LoRa message
     LORA.send(MESSAGE)
-    print("Sent message to node:", TARGET_ADDR, "Message:", message)
+    print("Sent message to node:", TARGET_ADDR, "Message:", MESSAGE)
 
     time.sleep(5)  # Wait before sending the next message
 
