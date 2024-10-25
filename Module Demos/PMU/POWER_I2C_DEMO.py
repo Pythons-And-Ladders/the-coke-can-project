@@ -25,7 +25,7 @@ def ENABLE_LDO_FOR_I2C(VOLTAGE_MV):
     # Set the LDO voltage and enable it
     I2C_BUS.writeto_mem(AXP2101_ADDR, _AXP2101_LDO_VOL0_CTRL, bytes([STEPS]))
     I2C_BUS.writeto_mem(AXP2101_ADDR, _AXP2101_LDO_ONOFF_CTRL0, bytes([0x01]))  # Enable LDO0
-    print("LDO for GPS enabled.")
+    print("LDO for I2C enabled.")
 
-# Enable the LDO powering GPS with a voltage of 3300 mV
+# Enable the LDO powering I2C bus with a voltage of 3300 mV
 ENABLE_LDO_FOR_I2C(3300)
