@@ -14,7 +14,7 @@ _AXP2101_LDO1_VOL_STEPS = 100      # Step size in mV
 # Initialize I2C communication
 I2C_BUS = I2C(1, scl=Pin(SCL_PIN), sda=Pin(SDA_PIN))
 
-def ENABLE_LDO_FOR_GPS(VOLTAGE_MV):
+def ENABLE_LDO_FOR_I2C(VOLTAGE_MV):
     # Clamp voltage to minimum to ensure module does not receive too much voltage
     VOLTAGE_MV = max(VOLTAGE_MV, _AXP2101_LDO1_VOL_MIN)
     
@@ -28,4 +28,4 @@ def ENABLE_LDO_FOR_GPS(VOLTAGE_MV):
     print("LDO for GPS enabled.")
 
 # Enable the LDO powering GPS with a voltage of 3300 mV
-ENABLE_LDO_FOR_GPS(3300)
+ENABLE_LDO_FOR_I2C(3300)
