@@ -4,4 +4,4 @@ This folder contains the demonstration files that exploit the functionality of t
 
 ## Contents:
 
-- **LAT_LON_DEMO.py**: Code to initialise GNSS module, extract and parse NMEA sentences from satellties and display latitude and longitude values.
+- **`LAT_LON_DEMO.py`**: Code to initialise GNSS module, extract and parse NMEA sentences from satellties and display latitude and longitude values.
