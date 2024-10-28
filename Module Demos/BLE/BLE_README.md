@@ -1,6 +1,6 @@
 # BLE Code Overview
 
-This folder contains the demonstration files that exploit the functionality of the integrated Bluetooth and BLE (Bluetooth Low Energy) 
+This folder contains demonstration files showcasing the Bluetooth and Bluetooth Low Energy (BLE) capabilities of the onboard ESP32-S3 microcontroller (MCU).
 
 ## Contents:
 
