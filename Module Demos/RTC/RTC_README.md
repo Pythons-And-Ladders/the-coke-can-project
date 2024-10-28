@@ -4,4 +4,4 @@ This folder contains the demonstration files that exploit the functionality of t
 
 ## Contents:
 
-- **RTC_DEMO.py**: Code to interface with the onboard RTC file and extract the time and date, structuring the data into a easily readable formats.
+- **`RTC_DEMO.py`**: Code to interface with the onboard RTC file and extract the time and date, structuring the data into a easily readable formats.
