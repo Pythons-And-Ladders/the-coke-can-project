@@ -1,6 +1,6 @@
 # Module Demos
 
-This folder contains the demonstration files that exploit the functionality of the onboard modules individually.
+This folder contains demonstration files showcasing the individual functionality of each onboard module.
 
 ## Contents:
 
