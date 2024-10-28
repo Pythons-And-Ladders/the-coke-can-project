@@ -15,4 +15,4 @@ This folder contains demonstration files showcasing the individual functionality
 
 ## Disclaimer:
 
-The IMU, SDCard reader, and certain functions of the modules listed above have not yet been utilised or tested within the current scope of this project. However, the required drivers for these functionalities are included, though their compatibility and functionality have not been fully verified.
+The IMU, SD Card reader, and certain functions of the modules listed above have not yet been utilised or tested within the current scope of this project. However, the required drivers for these functionalities are included, though their compatibility and functionality have not been fully verified.
