@@ -4,9 +4,9 @@ This folder contains the libraries used within the project at its current state.
 
 ## Contents:
 
-- **`aioble`**: Provides Bluetooth Low Energy (BLE) support for asynchronous communication, enabling BLE connections, advertising, and data exchange in non-blocking tasks.
-- **`micropyGPS`**: Processes NMEA data from the GNSS module, allowing for easy parsing and interpretation of location, speed, and time data.
-- **`network`**: Manages network interfaces such as WiFi, enabling setup for both access point (AP) and station (STA) modes and handling network connections.
+- `aioble`: Provides Bluetooth Low Energy (BLE) support for asynchronous communication, enabling BLE connections, advertising, and data exchange in non-blocking tasks.
+- `micropyGPS`: Processes NMEA data from the GNSS module, allowing for easy parsing and interpretation of location, speed, and time data.
+- `network`: Manages network interfaces such as WiFi, enabling setup for both access point (AP) and station (STA) modes and handling network connections.
 
 ## Disclaimer:
 
