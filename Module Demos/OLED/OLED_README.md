@@ -4,4 +4,4 @@ This folder contains the demonstration files that exploit the functionality of t
 
 ## Contents:
 
-- **`DISPLAY_TEXT_DEMO.py`**: Code to interface with the onboard OLED screen and display data.
+- `DISPLAY_TEXT_DEMO.py`: Code to interface with the onboard OLED screen and display data.
