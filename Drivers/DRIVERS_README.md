@@ -13,6 +13,4 @@ This folder contains the drivers used within the project at its current state.
 
 ## Disclaimers:
 
-The IMU, TF card reader, and certain functions of the modules listed above have not yet been utilised or tested within the current scope of this project. However, the required drivers for these functionalities are included, though their compatibility and functionality have not been fully verified. 
-
-In addition to the libraries listed above, the code utilises pre-installed libraries like `machine`, `time`, and `bluetooth`. A full list of available libraries with Micropython can be found on the [Micropython website](https://docs.micropython.org/en/latest/library/index.html).
+The IMU and certain functions of the modules listed above have not yet been utilised or tested within the current scope of this project. However, the required drivers for these functionalities are included, though their compatibility and functionality have not been fully verified. 
