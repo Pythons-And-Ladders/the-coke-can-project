@@ -15,7 +15,7 @@ This creative approach simplified the early design process and now reflects the 
 
 ## Project Overview
 
-The purpose of this project is to design and develop an intelligent data routing system for a WSN. The primary goal is to enhance **energy efficiency**, while ensuring **reliability**, **extensibility** and **flexibility** in data management. This includes both a theoretical design and the physical implementation of a working WSN.
+The purpose of this project is to design and develop an intelligent edge processing framework for data routing within a WSN. The primary goal is to enhance **data transfer reliability**, while ensuring **flexibility** and **extensibility** in system design. This includes both a theoretical design and the physical implementation of said design onto a LilyGO T-Beam Supreme (acting as a WSN node).
 
 **Key Features**
 - **Metadata Management**: Efficient assignment and management of data metadata.
@@ -25,16 +25,16 @@ The purpose of this project is to design and develop an intelligent data routing
 - **Data Transmission**: Secure and reliable data transmission across the WSN.
 
 ### System Capabilities
-This project turns LilyGO T-Beam Supreme Meshtastic devices into customisable wireless sensor nodes capable of environmental monitoring and data classification for transmission using different communication protocols. The system includes the processing of:
+This project turns LilyGO T-Beam Supreme (Meshtastic) devices into customisable wireless sensor nodes capable of environmental monitoring and data classification for transmission using different communication protocols. The system includes the processing of:
 
 - **Intrinsic node data**: e.g., battery percentage and system voltage
 - **Extrinsic sensor data**: e.g., temperature, humidity and pressure
 - **Network parameters**: e.g., RSSI and transmission error rate
 
-By allowing you to preemptively classify sensor data based on urgency and importance, this system ensures energy-efficient communication and flexible network configurations.
+By allowing you to preemptively classify sensor data based on urgency and importance, this system ensures reliable communication and flexible network configurations.
 
 ## Product Scope
-The project focuses on the development of an intelligent data routing system for various applications, such as disaster management, environmental monitoring, and industrial automation. It provides a flexible, multi-protocol communication system (LoRa, Wi-Fi and BLE) for energy efficient transmission of data.
+The project focuses on the development of the aforementioned framework for various applications, such as disaster management, environmental monitoring, and industrial automation. It provides a flexible, multi-protocol communication system (LoRa, Wi-Fi and BLE) to ensure critical data is transmitted in a timely and reliable manner.
 
 **In-Scope Tasks:**
 - Data collection and labelling
@@ -160,7 +160,7 @@ The main.py file will execute, collecting sensor data, classifying it based on u
 Synthetic Data Handling: If you want to simulate multimedia data (e.g., video or audio), modify the data_type in the packetisation function to handle synthetic sensor inputs.
 
 ## Extending the Project
-The current project offers several opportunities for expansion. While the IMU is not yet interfaced due to challenges with configuring its control registers, this could be explored for advanced motion sensing in future updates. Additionally, the GPIO pins, though unused for now, provide the flexibility to add more sensors as needed. SD card functionality could also be improved, as only certain formats (SD/SDHC with FAT32) are compatible, and further refinement could ensure smoother data storage.
+The current project offers several opportunities for expansion. While the IMU is not yet interfaced due to challenges with configuring its control registers, this could be explored for advanced motion sensing in future updates. Additionally, the GPIO pins, though unused for now, provide the flexibility to add more sensors as needed.
 
 Additional expansions include customising the decision engine to modify how data is classified and prioritised, adding network failover logic to guarantee message delivery through the best available communication protocol, and further optimising overall system performance.
 
