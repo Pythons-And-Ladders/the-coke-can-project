@@ -2,7 +2,8 @@
 
 Welcome to The **Coke Can Project**! This repository provides the tools, code, and guidance to convert the LilyGO T-Beam Supreme into a highly configurable, multi-protocol wireless sensor node. The system intelligently classifies and transmits data over **LoRa**, **WiFi**, or **BLE**, depending on Quality of Service (QoS) requirements, urgency, and data importance.
 
-This repository acts as a user guide and is part of a Master's Integrated Engineering Project, of which the final report can be found in 'Final Report.pdf'
+This repository acts as a user guide and is part of a Master's Integrated Engineering Project, of which the final report can be found in:
+`Final Master's Engineering Project Report.pdf`
 
 ## Why "The Coke Can Project"?
 
