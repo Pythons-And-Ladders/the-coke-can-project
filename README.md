@@ -1,6 +1,8 @@
 # The Coke Can Project
 
-Welcome to The **Coke Can Project**! This repository provides the tools, code, and guidance to convert the TTGO T-Beam Supreme into a highly configurable, multi-protocol wireless sensor node. The system intelligently classifies and transmits data over **LoRa**, **WiFi**, or **BLE**, depending on Quality of Service (QoS) requirements, urgency, and data importance.
+Welcome to The **Coke Can Project**! This repository provides the tools, code, and guidance to convert the LilyGO T-Beam Supreme into a highly configurable, multi-protocol wireless sensor node. The system intelligently classifies and transmits data over **LoRa**, **WiFi**, or **BLE**, depending on Quality of Service (QoS) requirements, urgency, and data importance.
+
+This repository acts as a user guide and is part of a Master's Integrated Engineering Project, of which the final report can be found in 'Final Report.pdf'
 
 ## Why "The Coke Can Project"?
 
@@ -22,7 +24,7 @@ The purpose of this project is to design and develop an intelligent data routing
 - **Data Transmission**: Secure and reliable data transmission across the WSN.
 
 ### System Capabilities
-This project turns TTGO T-Beam Supreme Meshtastic devices into customisable wireless sensor nodes capable of environmental monitoring and data classification for transmission using different communication protocols. The system includes the processing of:
+This project turns LilyGO T-Beam Supreme Meshtastic devices into customisable wireless sensor nodes capable of environmental monitoring and data classification for transmission using different communication protocols. The system includes the processing of:
 
 - **Intrinsic node data**: e.g., battery percentage and system voltage
 - **Extrinsic sensor data**: e.g., temperature, humidity and pressure
@@ -57,7 +59,7 @@ The project focuses on the development of an intelligent data routing system for
 
 | General Hardware                    | Specific Model Used                                      |
 |-------------------------------------|----------------------------------------------------------|
-| TTGO T-Beam Supreme                 | [TTGO T-Beam Supreme (868MHz) Meshtastic with L76K GNSS](https://www.lilygo.cc/products/t-beam-supreme-meshtastic?variant=43067943944373)                            |
+| LilyGO T-Beam Supreme                 | [LilyGO T-Beam Supreme (868MHz) Meshtastic with L76K GNSS](https://www.lilygo.cc/products/t-beam-supreme-meshtastic?variant=43067943944373)                            |
 | USB to USB-C Data Cable             | [AmazonBasics Data Cable](https://www.amazon.co.uk/Amazon-Basics-Charger-480Mbps-Certified/dp/B01GGKYN0A/ref=sr_1_4?dib=eyJ2IjoiMSJ9.dOHI1-qQuWicZ8t_-pqPinYqxOLlXHpNnYNP2SqEKFvDepBMmupcew3uPBtgRCV7MFRnCYm8TZSSjAFjfFv5S9L-UyBkK8esv-7LWRXeVkPMBFAsTSuuHT2857aqMRdhh6jsVNsQgEkfAw1QlDbFAeAYKJpLdvWp_Vj_mgGagMeRwWnejABYvkvJfCfhCT8TDtSgj4ZqNFCqq4rVHuCdo3qXMf7cADMePZbt2NBYwWanSN-atN2rttrvGqgL-C9L57B64e3myyMMEqHTzyPoydbmiGOErT62FG9YFwRa1Q8.5yiwPH-ljlF_QE15jnZrjKfw6YlOu8MrWCJUrsaJOHQ&dib_tag=se&keywords=USB+to+usb+c+data+cable&nsdOptOutParam=true&qid=1729673117&refinements=p_123%3A234478&rnid=91049098031&s=computers&sr=1-4)                              |
 | 2.4GHz Antenna                      | [The PiHut 2.4GHz WiFi/BLE Antenna With U.FL Adapter](https://thepihut.com/products/raspberry-pi-compute-module-4-antenna-kit?variant=39487166185667&currency=GBP&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&gad_source=1&gclid=Cj0KCQjwveK4BhD4ARIsAKy6pMIKWzKMmUhCy9fwbSfw-WAjaDb6LVd-tD4tyxpErr5FtHXbHRIb2lwaAkapEALw_wcB)  |
 | Flat Top 18650 Rechargable Battery  | [Aukido 3.7V 3500mAh NiMH Battery](https://www.amazon.co.uk/Rechargeable-Capacity-Batteries-Headlamp-Flashlight/dp/B0CD2QDDX8) |
@@ -82,13 +84,13 @@ cd the-coke-can-project
 
 ### 2. Prepare your Meshtastic device:
 
-These steps will guide you through setting up the TTGO T-Beam Supreme by flashing it with MicroPython. This will replace the Meshtastic firmware, enabling full control over the device for custom configurations.
+These steps will guide you through setting up the LilyGO T-Beam Supreme by flashing it with MicroPython. This will replace the Meshtastic firmware, enabling full control over the device for custom configurations.
 
 **2.1. Entering Bootloader Mode:**
 - Place the device in bootloader mode by following the [flashing instructions](https://meshtastic.org/docs/hardware/devices/lilygo/tbeam/?t-beam=supreme#flashing) set out by Meshtastic.
 
 **2.2. Connecting the Device**
-- Once in bootloader mode, connect the TTGO T-Beam Supreme to your development platform via USB to USB-C data cable.
+- Once in bootloader mode, connect the LilyGO T-Beam Supreme to your development platform via USB to USB-C data cable.
 - Ensure the development platform recognises a device by checking the COM ports: Device Manager > Ports (COM & LPT).
 
 **2.3. Setting Up Thonny IDE**
@@ -98,15 +100,15 @@ These steps will guide you through setting up the TTGO T-Beam Supreme by flashin
 - Select the drop-down menu directly under "Which kind of interpreter should Thonny use for running your code?" and select the "MicroPython (ESP32)" option.
 - Now within the "Details" box, there should be the hyperlinked text at the bottom right "Install or update MicroPython (esptool) (UF2)". Click this to open the "Install MicroPython (esptool)" window.
 
-**2.4. Flashing MicroPython to the TTGO T-Beam Supreme**
-- If not automatically selected when the window opens, click on the "Target port" drop down menu and select the port that corresponds to that of which the TTGO T-BEAM SUPREME is connected to.
+**2.4. Flashing MicroPython to the LilyGO T-Beam Supreme**
+- If not automatically selected when the window opens, click on the "Target port" drop down menu and select the port that corresponds to that of which the LilyGO T-BEAM SUPREME is connected to.
 - Ensure that the tick box for "Erase all flash before installing (not just the write areas)" is selected before proceeding.
-- Now to select the appropriate version of MicroPython for the TTGO T-Beam Supreme, the "ESP32-S3" option should be selected within the "MicroPython family" drop-down menu, and the "Espressif ⋅ ESP32-S3" option within the variant menu.
+- Now to select the appropriate version of MicroPython for the LilyGO T-Beam Supreme, the "ESP32-S3" option should be selected within the "MicroPython family" drop-down menu, and the "Espressif ⋅ ESP32-S3" option within the variant menu.
 - From these options, Thonny will automatically assign the most recent version of this MicroPython variant to your device. For reference, the version currently used within this project is 1.23.0.
 - Ensure the device is in bootloader mode and press the install button which will erase the meshtastic firmware and flash the native Espressif ESP32-S3 firmware.
 
 **2.5. Final Steps**
-Now the TTGO T-Beam Supreme should be ready to run on the microcontroller's native firmware. You can now proceed with configuring it for custom applications, such as turning it into a fully configurable WSN node (of which instructions will follow).
+Now the LilyGO T-Beam Supreme should be ready to run on the microcontroller's native firmware. You can now proceed with configuring it for custom applications, such as turning it into a fully configurable WSN node (of which instructions will follow).
 
 ### 3. Install Necessary Files
 
@@ -117,7 +119,7 @@ These files are the configurable files that make up the logic behind the wireles
 - decision_engine.py: The decision engine responsible for packetising, classifying and selecting the appropriate communication method for the retreived data.
 
 **3.2. Required Drivers**
-To interface with the onboard modules of the TTGO T-Beam Supreme, you need to install the necessary drivers. These drivers were pre-configured within the Meshtastic firmware, but since we are now using the ESP32-S3 firmware, you will need to manually reinstall them to ensure proper communication between the board's modules and your development environment. Here is the list of drivers:
+To interface with the onboard modules of the LilyGO T-Beam Supreme, you need to install the necessary drivers. These drivers were pre-configured within the Meshtastic firmware, but since we are now using the ESP32-S3 firmware, you will need to manually reinstall them to ensure proper communication between the board's modules and your development environment. Here is the list of drivers:
 
 - `AXP2101.py`: Driver for the AXP2101 Power Management Unit (PMU).
 - `bme280.py`[T]: Driver for the BME280 sensor.
@@ -146,7 +148,7 @@ MicroPython comes with several libraries pre-installed, including machine, which
 After downloading all the necessary files to your development platform's local directory, launch Thonny and navigate to the files tab on the left side of the window. Here, you should see all the downloaded files listed. Select all the files, right-click to open the actions menu, and choose "Upload to /". While the files upload to your device, feel free to grab a coffee or a cup of tea (it may take a few minutes). Once the upload is complete, you will find the files in the "MicroPython device" tab below the files section on the left side of the window, accompanied by the "boot.py" file.
 
 ## Basic Usage
-Once the TTGO T-Beam Supreme has been setup, and all files successfuly uploaded to the device, you can begin to exploit its functional capacity.
+Once the LilyGO T-Beam Supreme has been setup, and all files successfuly uploaded to the device, you can begin to exploit its functional capacity.
 
 It is recommended that you go through the `Module Demos` folder to ensure the device has been configured correctly in a module-by-module manner. This will enable you to ensure each component on the board operates as expected and gain familiarity with the individual pieces of code that the `main.py` and `decision_engine.py` files are comprised of.
 
@@ -171,7 +173,7 @@ These enhancements would build on the project's solid foundation without detract
 `Module Demos`: A folder containing demo files that exploit the functionality of the individual modules on the board, such as the LoRa transceiver, OLED screen, PMU, etc.
 
 ## Roadmap
-[FILL IN]
+This is the first iteration of this project, laying the groundwork for future enhancements, including expanded functionality, system optimisations, and broader testing under real-world conditions. Future updates will focus on refining the framework, integrating additional features, and addressing identified limitations.
 
 ## Contributing
 Contributions to improve the project and expand its functionality are more than welcome. Feel free to:
@@ -179,4 +181,4 @@ Contributions to improve the project and expand its functionality are more than 
 - Fork the repository, make your changes, and submit a pull request.
 
 ## License
-[FILL IN]
+This project is publicly accessible and can be used freely. However, no formal license has been applied. Consider using, modifying, or distributing with acknowledgment. Many thanks and enjoy!
